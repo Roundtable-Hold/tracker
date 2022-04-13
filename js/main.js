@@ -376,7 +376,7 @@ var profilesKey = 'darksouls3_profiles';
         if (!('collapsed' in profiles[profilesKey][profile_name]))
             profiles[profilesKey][profile_name].collapsed = {};
         if (!('current_tab' in profiles[profilesKey][profile_name]))
-            profiles[profilesKey][profile_name].current_tab = '#tabMain';
+            profiles[profilesKey][profile_name].current_tab = '#tabOptions';
         if (!('hide_completed' in profiles[profilesKey][profile_name]))
             profiles[profilesKey][profile_name].hide_completed = false;
         if (!('journey' in profiles[profilesKey][profile_name]))

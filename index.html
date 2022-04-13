@@ -15,72 +15,54 @@
     <link href="css/main.css" rel="stylesheet">
   </head>
   <body>
-    <nav class="navbar sticky-top navbar-expand-md bg-dark navbar-dark d-print-none">
-      <div class="container-fluid">
-        <button aria-controls="nav-collapse" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#nav-collapse" data-bs-toggle="collapse" type="button">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="nav-collapse">
-          <ul class="nav navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link hide-buttons" data-bs-toggle="tab" href="#tabOptions">
-                <i class="bi bi-gear-fill"></i> Options
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
     <div class="container">
-      <div class="tab-pane fade gap-3" id="tabOptions">
-        <h2>Roundtable Hold has moved</h2>
-        <p>This site has moved to 
-          <a href="https://roundtablehold.net">roundtablehold.net</a> In order to keep your data hit export clipboard below. Then, go to the new site, click options, paste the data into the text box, and hit Import Data
-        </p>
-        <div class="row">
+      <h2>Roundtable Hold has moved</h2>
+      <p>This site has moved to 
+        <a href="https://roundtablehold.net">roundtablehold.net</a> In order to keep your data hit export clipboard below. Then, go to the new site, click options, paste the data into the text box, and hit Import Data
+      </p>
+      <div class="row">
+        <div class="col col-12 col-md-4">
+          <h4>Profile management:</h4>
+        </div>
+        <form class="form-inline input-group pull-right gap-1">
           <div class="col col-12 col-md-4">
-            <h4>Profile management:</h4>
+            <select class="form-select" id="profiles"></select>
           </div>
-          <form class="form-inline input-group pull-right gap-1">
-            <div class="col col-12 col-md-4">
-              <select class="form-select" id="profiles"></select>
+          <div class="col col-12 col-md-4">
+            <div class="btn-group">
+              <button class="btn btn-primary" id="profileAdd" type="button">Add</button>
             </div>
-            <div class="col col-12 col-md-4">
-              <div class="btn-group">
-                <button class="btn btn-primary" id="profileAdd" type="button">Add</button>
-              </div>
-              <div class="btn-group">
-                <button class="btn btn-primary" id="profileEdit" type="button">Edit</button>
-              </div>
-              <div class="btn-group">
-                <button class="btn btn-primary" id="profileNG+" type="button">NG+</button>
-              </div>
+            <div class="btn-group">
+              <button class="btn btn-primary" id="profileEdit" type="button">Edit</button>
+            </div>
+            <div class="btn-group">
+              <button class="btn btn-primary" id="profileNG+" type="button">NG+</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="row">
+        <div class="col col-12 col-md-4">
+          <h4>Data import/export:</h4>
+        </div>
+        <div class="col col-12 col-md-8">
+          <form class="form-inline gap-1 m-1">
+            <div class="btn-group pull-left">
+              <button class="btn btn-primary" id="profileImport" type="button">Import file</button>
+            </div>
+            <div class="btn-group pull-left">
+              <button class="btn btn-primary" id="profileExport" type="button">Export file</button>
+            </div>
+            <div class="btn-group pull-right">
+              <button class="btn btn-primary" id="profileImportText" type="button">Import textbox</button>
+            </div>
+            <div class="btn-group pull-right mt-1 mt-md-0">
+              <button class="btn btn-primary" id="profileExportText" type="button">Export clipboard</button>
             </div>
           </form>
         </div>
-        <div class="row">
-          <div class="col col-12 col-md-4">
-            <h4>Data import/export:</h4>
-          </div>
-          <div class="col col-12 col-md-8">
-            <form class="form-inline gap-1 m-1">
-              <div class="btn-group pull-left">
-                <button class="btn btn-primary" id="profileImport" type="button">Import file</button>
-              </div>
-              <div class="btn-group pull-left">
-                <button class="btn btn-primary" id="profileExport" type="button">Export file</button>
-              </div>
-              <div class="btn-group pull-right">
-                <button class="btn btn-primary" id="profileImportText" type="button">Import textbox</button>
-              </div>
-              <div class="btn-group pull-right mt-1 mt-md-0">
-                <button class="btn btn-primary" id="profileExportText" type="button">Export clipboard</button>
-              </div>
-            </form>
-          </div>
-          <div class="col col-12">
-            <textarea class="form-control" id="profileText"></textarea>
-          </div>
+        <div class="col col-12">
+          <textarea class="form-control" id="profileText"></textarea>
         </div>
       </div>
       <div class="modal fade" id="profileModal" role="dialog" tabindex="-1">
