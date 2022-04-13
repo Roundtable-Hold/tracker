@@ -1,0 +1,212 @@
+@media print {
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  h4 div {
+    page-break-before: avoid;
+    page-break-after: avoid;
+    break-after: avoid;
+    break-before: avoid;
+    break-inside: auto;
+  }
+  ul {
+    page-break-inside: auto;
+    break-inside: auto;
+  }
+  li {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}
+
+
+body {
+  position: relative;
+}
+
+.table-label {
+  font-weight: 400;
+}
+
+label {
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 22px;
+}
+ul li ul {
+  padding-top: 0;
+}
+h3 {
+  margin-bottom: 0;
+}
+.checkbox label,
+.radio label {
+  padding-left: 24px;
+}
+.checkbox input[type=checkbox],
+.checkbox-inline input[type=checkbox],
+.radio input[type=radio],
+.radio-inline input[type=radio] {
+  margin-left: -24px;
+}
+
+.toc a:not(:hover) {
+  text-decoration: none;
+}
+
+.toc a {
+  color: inherit;
+}
+
+.toc-button {
+  text-decoration: none;
+}
+
+.highlight {
+    background-color: rgb(255, 246, 18);
+}
+
+.hiddenfile {
+ width: 0px;
+ height: 0px;
+ overflow: hidden;
+}
+
+.btn.fadingbutton {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom: 0;
+  position: fixed;
+  display: none;
+  z-index: 1;
+  bottom: 0;
+  /* The "Paper" bootstrap theme modifies the transition properties;
+  reset them to the default value to prevent ruining the fadeIn() */
+  -webkit-transition: all 0s ease 0s;
+  -o-transition: all 0s ease 0s;
+  transition: all 0s ease 0s;
+}
+.fadingbutton.back-to-top {
+  border-top-right-radius: 0;
+  border-right: 0;
+  right: 0;
+}
+.fadingbutton.togglehide {
+  border-top-left-radius: 0;
+  border-left: 0;
+  left: 0;
+}
+
+.btn-collapse {
+  padding: 4px 10px 1px;
+  margin-right: 10px;
+  vertical-align: top;
+}
+
+.btn:focus, .btn.active:focus {
+    outline: none;
+    outline: 0;
+}
+
+/* Icon when the collapsible content is shown */
+.btn-collapse:after {
+  font-family: 'Glyphicons Halflings';
+  content:"\e082";
+}
+/* Icon when the collapsible content is hidden */
+.btn-collapse.collapsed:after {
+  content:"\e081";
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+div.hide_completed .completed {
+  display: none !important;
+}
+
+li.completed label {
+  text-decoration: line-through;
+  -webkit-text-decoration: line-through !important;
+}
+
+input[type="checkbox"]:checked + .item_content {
+  text-decoration: line-through;
+  -webkit-text-decoration: line-through !important;
+}
+
+textarea#profileText {
+  height: 15em;
+  resize: vertical;
+}
+
+/* Work around what seems to be a bootstrap bug affecting the hover border on the right side of the add profile button */
+.input-group-btn:last-child>.btn:focus,
+.input-group-btn:last-child>.btn:hover {
+  z-index: 3;
+}
+
+/* Decorators for NG+/NG++ entries */
+.s_ng\+ .item_content:before {
+  content: "[NG+: ";
+}
+.s_ng\+\+ .item_content:before {
+  content: "[NG++: ";
+}
+.s_ng\+ .item_content:after,
+.s_ng\+\+ .item_content:after {
+  content: "]";
+}
+
+/* Styling for checklist filter categories and toggles */
+.btn-group.btn-group-vertical > .btn-group:not(:first-child) > .btn-group-vertical {
+  left: 0;
+  top: 100%;
+  display: none;
+  position: absolute;
+}
+.btn-group.btn-group-vertical:hover > .btn-group:not(:first-child) > .btn-group-vertical {
+  display: block;
+}
+.btn-group.btn-group-vertical > .btn-group:first-child > .btn-group-vertical.open > .btn {
+  z-index: 1;
+}
+.btn-group.btn-group-vertical > .btn-group:not(:first-child) > .btn-group-vertical > .btn {
+  z-index: 3;
+  text-align: left;
+}
+.btn-group.btn-group-vertical > .btn-group:not(:first-child) > .btn-group-vertical > .btn:hover {
+  z-index: 4;
+}
+.btn-group.btn-group-vertical:not(:last-child) > .btn-group:first-child > .btn-group-vertical > .btn {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.btn-group.btn-group-vertical:not(:first-child) > .btn-group:first-child > .btn-group-vertical > .btn,
+.btn-group.btn-group-vertical > .btn-group:not(:first-child) > .btn-group-vertical > .btn:first-child {
+  border-top-left-radius: 0;
+}
+.btn-group.btn-group-vertical:not(:first-child) > .btn-group:first-child > .btn-group-vertical > .btn,
+.btn-group.btn-group-vertical:first-child:hover > .btn-group:first-child > .btn-group-vertical > .btn {
+  border-bottom-left-radius: 0;
+}
+
+.highlight {
+  background-color: cornflowerblue;
+  color: white;
+}
+
+/* @media
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+} */

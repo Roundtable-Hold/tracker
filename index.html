@@ -1,5 +1,141 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
-<title>Redirecting to https://roundtablehold.net/</title>
-<meta http-equiv="refresh" content="0; URL=https://roundtablehold.net/">
-<link rel="canonical" href="https://roundtablehold.net">
+<html lang="en">
+  <head>
+    <title>Roundtable Tracker</title>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="img/favicon.ico?" rel="shortcut icon" type="image/x-icon">
+    <link href="img/favicon-152.png" rel="apple-touch-icon-precomposed">
+    <link color="#000000" href="img/pinned-tab-icon.svg" rel="mask-icon">
+    <meta content="Cheat sheet for Elden Ring. Checklist of things to do, items to get etc." name="description">
+    <meta content="Ben Lambeth" name="author">
+    <meta content="yes" name="mobile-web-app-capable">
+    <link href="css/bootstrap.min.css" id="bootstrap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar sticky-top navbar-expand-md bg-dark navbar-dark d-print-none">
+      <div class="container-fluid">
+        <button aria-controls="nav-collapse" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#nav-collapse" data-bs-toggle="collapse" type="button">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="nav-collapse">
+          <ul class="nav navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link hide-buttons" data-bs-toggle="tab" href="#tabOptions">
+                <i class="bi bi-gear-fill"></i> Options
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="tab-pane fade gap-3" id="tabOptions">
+        <h2>Roundtable Hold has moved</h2>
+        <p>This site has moved to 
+          <a href="https://roundtablehold.net">roundtablehold.net</a> In order to keep your data hit export clipboard below. Then, go to the new site, click options, paste the data into the text box, and hit Import Data
+        </p>
+        <div class="row">
+          <div class="col col-12 col-md-4">
+            <h4>Profile management:</h4>
+          </div>
+          <form class="form-inline input-group pull-right gap-1">
+            <div class="col col-12 col-md-4">
+              <select class="form-select" id="profiles"></select>
+            </div>
+            <div class="col col-12 col-md-4">
+              <div class="btn-group">
+                <button class="btn btn-primary" id="profileAdd" type="button">Add</button>
+              </div>
+              <div class="btn-group">
+                <button class="btn btn-primary" id="profileEdit" type="button">Edit</button>
+              </div>
+              <div class="btn-group">
+                <button class="btn btn-primary" id="profileNG+" type="button">NG+</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="row">
+          <div class="col col-12 col-md-4">
+            <h4>Data import/export:</h4>
+          </div>
+          <div class="col col-12 col-md-8">
+            <form class="form-inline gap-1 m-1">
+              <div class="btn-group pull-left">
+                <button class="btn btn-primary" id="profileImport" type="button">Import file</button>
+              </div>
+              <div class="btn-group pull-left">
+                <button class="btn btn-primary" id="profileExport" type="button">Export file</button>
+              </div>
+              <div class="btn-group pull-right">
+                <button class="btn btn-primary" id="profileImportText" type="button">Import textbox</button>
+              </div>
+              <div class="btn-group pull-right mt-1 mt-md-0">
+                <button class="btn btn-primary" id="profileExportText" type="button">Export clipboard</button>
+              </div>
+            </form>
+          </div>
+          <div class="col col-12">
+            <textarea class="form-control" id="profileText"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="profileModal" role="dialog" tabindex="-1">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="profileModalTitle">Profile</h3>
+              <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+            </div>
+            <div class="modal-body">
+              <form class="form-horizontal">
+                <div class="control-group">
+                  <label class="control-label" for="profileModalName">Name</label>
+                  <div class="controls">
+                    <input class="form-control" id="profileModalName" placeholder="Enter Profile name" type="text">
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" data-bs-dismiss="modal" id="profileModalClose">Close</button>
+              <a class="btn btn-primary" data-bs-dismiss="modal" href="#" id="profileModalAdd">Add</a>
+              <a class="btn btn-primary" href="#" id="profileModalUpdate">Update</a>
+              <a class="btn btn-primary" href="#" id="profileModalDelete">Delete</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="NG+Modal" role="dialog" tabindex="-1">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="profileModalTitleNG">Begin next journey?</h3>
+              <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+            </div>
+            <div class="modal-body">If you begin the next journey, all progress on the &quot;Playthrough&quot; and &quot;Misc&quot; tabs of this profile will be reset, while achievement and collection checklists will be kept.</div>
+            <div class="modal-footer">
+              <a class="btn btn-primary" data-bs-dismiss="modal" href="#">No</a>
+              <a class="btn btn-danger" href="#" id="NG+ModalYes">Yes</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hiddenfile">
+      <input id="fileInput" name="upload" type="file">
+    </div>
+    <a class="btn btn-primary btn-sm fadingbutton back-to-top d-print-none">Back to Top&thinsp;
+      <span class="bi bi-arrow-up"></span>
+    </a>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jstorage.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jets.min.js"></script>
+    <script src="js/jquery.highlight.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
