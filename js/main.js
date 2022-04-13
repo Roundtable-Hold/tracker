@@ -107,7 +107,7 @@ var profilesKey = 'darksouls3_profiles';
 
     jQuery(document).ready(function($) {
         // Get the right style going...
-        themeSetup(buildThemeSelection());
+        // themeSetup(buildThemeSelection());
 
         $('ul li[data-id]').each(function() {
             if (profiles[profilesKey][profiles.current].checklistData[$(this).attr('data-id')] === true) {
@@ -159,12 +159,12 @@ var profilesKey = 'darksouls3_profiles';
         });
 
         // Theme callback
-        $('#themes').change(function(event) {
-            var stylesheet = $('#themes').val();
-            themeSetup(stylesheet);
-            profiles[profilesKey][profiles.current].style = stylesheet;
-            $.jStorage.set(profilesKey, profiles);
-        });
+        // $('#themes').change(function(event) {
+        //     var stylesheet = $('#themes').val();
+        //     themeSetup(stylesheet);
+        //     profiles[profilesKey][profiles.current].style = stylesheet;
+        //     $.jStorage.set(profilesKey, profiles);
+        // });
 
         $('#profiles').change(function(event) {
             profiles.current = $(this).val();
@@ -407,7 +407,7 @@ var profilesKey = 'darksouls3_profiles';
         }
 
         $('[data-ng-toggle="' + profiles[profilesKey][profile_name].journey + '"]').click().change();
-        themeSetup(profiles[profilesKey][profiles.current].style);
+        // themeSetup(profiles[profilesKey][profiles.current].style);
     }
 
     // Setup ("bootstrap", haha) styling
